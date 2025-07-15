@@ -18,7 +18,7 @@ export default function CoinPage() {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <div className="p-6">
+        <div className="pt-16 pb-20 px-4">
           <h1 className="text-2xl font-bold mb-4">{coinSymbol} Chart</h1>
           <TradingViewWidget symbol={coinSymbol} />
         </div>
