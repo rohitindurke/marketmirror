@@ -1,11 +1,18 @@
+"use client"
 
-export default function Home() {
+import { AppSidebar } from "@/components/app-sidebar"
+import {
+  SidebarInset,
+  SidebarProvider,
+} from "@/components/ui/sidebar"
+
+
+
+export default function Page() {
+
   return (
-    <div className="tereNam">
-      <center>
-
-        nav bar
-      </center>
-    </div>
-  );
+    <SidebarProvider>
+    <AppSidebar />
+    </SidebarProvider>
+  )
 }
