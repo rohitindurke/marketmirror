@@ -1,12 +1,31 @@
 "use client"
 import { useEffect, useRef } from "react"
 
+// --- Typings for TradingView ---
+interface TradingViewWidgetOptions {
+  container_id: string
+  symbol: string
+  interval: string
+  timezone: string
+  theme: string
+  style: string
+  locale: string
+  enable_publishing: boolean
+  allow_symbol_change: boolean
+  autosize: boolean
+}
+
+interface TradingViewGlobal {
+  widget: (options: TradingViewWidgetOptions) => void
+}
+
 declare global {
   interface Window {
-    TradingView: any
+    TradingView: TradingViewGlobal
   }
 }
 
+// --- Component ---
 export default function TradingViewWidget({ symbol }: { symbol: string }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -17,7 +36,7 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
 
     script.onload = () => {
       if (window.TradingView) {
-        new window.TradingView.widget({
+        window.TradingView.widget({
           container_id: "tv-chart",
           symbol: `BINANCE:${symbol}`,
           interval: "30",
@@ -31,6 +50,7 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
         })
       }
     }
+    
 
     if (containerRef.current) {
       containerRef.current.innerHTML = ""

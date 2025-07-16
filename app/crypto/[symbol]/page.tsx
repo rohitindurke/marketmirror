@@ -28,9 +28,9 @@ export default function CoinPage() {
           <h1 className="text-2xl font-bold mb-4">{coinSymbol} Chart</h1>
           <TradingViewWidget symbol={coinSymbol} />
           <div className="flex flex-1 flex-col gap-4 p-4" style={{fontSize:'30px'}}>
-            Also check related crypto's
-          </div>
-          
+              Also check related crypto&apos;s
+            </div>
+
           <div className="flex flex-1 flex-col gap-4 p-4">
           {Array.from({ length: 8 }).map((_, index) => (
             <div

@@ -19,7 +19,7 @@ export default function Page() {
     <MobileTopNavbar />
     <div className="indian">
       Teeere nam kiya hai sab
-      kindly<br></br> Just check only crypto page not more than that cuz is under construction 
+      kindly<br></br> Just check only crypto page not more than that cuz is under construction u bitch 
     </div>
     <MobileBottomNavbar />
     </SidebarInset>
