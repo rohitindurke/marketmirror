@@ -30,7 +30,7 @@ const items = [
   },
   {
     title: "Indian Market",
-    url: "#",
+    url: "/indian",
     icon: LineChart,
   },
   {

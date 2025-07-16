@@ -19,7 +19,7 @@ import MobileBottomNavbar from "@/components/MobileBottomNavbar"
 const coins = [
   "BTC", "ETH", "BNB", "SOL",
   "XRP", "DOGE", "ADA", "DOT",
-  "AVAX", "LINK", "MATIC", "LTC",
+  "AVAX", "LINK", "DOT", "TAO",
 ]
 
 export default function Page() {

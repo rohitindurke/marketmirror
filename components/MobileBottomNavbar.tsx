@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, LineChart, Settings } from "lucide-react"
+import { Home, Coins, LineChart, User,Calendar } from "lucide-react"
 
 export default function MobileBottomNavbar() {
   return (
@@ -10,13 +10,22 @@ export default function MobileBottomNavbar() {
         Home
       </a>
       <a href="/crypto" className="flex flex-col items-center text-xs">
-        <LineChart className="w-5 h-5" />
+        <Coins className="w-5 h-5" />
         Crypto
       </a>
-      <a href="/settings" className="flex flex-col items-center text-xs">
-        <Settings className="w-5 h-5" />
-        Settings
+      <a href="/indian" className="flex flex-col items-center text-xs">
+        <LineChart className="w-5 h-5" />
+        Indian
       </a>
+      <a href="/mutual-fund" className="flex flex-col items-center text-xs">
+        <Calendar className="w-5 h-5" />
+        Mutual fund
+      </a>
+      <a href="/user" className="flex flex-col items-center text-xs">
+        <User className="w-5 h-5" />
+        Profile
+      </a>
+      
     </nav>
   )
 }

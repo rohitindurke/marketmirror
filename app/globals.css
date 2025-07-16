@@ -129,3 +129,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.indian{
+  font-size:50px;
+  align:center;
+  margin-top:60px;
+  background-color:red
+}
