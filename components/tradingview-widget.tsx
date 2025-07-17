@@ -15,29 +15,26 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
   useEffect(() => {
     const loadWidget = () => {
       if (window.TradingView && containerRef.current) {
-        containerRef.current.innerHTML = "" // clear previous chart
+        containerRef.current.innerHTML = ""
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const theme =
-        document.documentElement.className === "dark" ? "dark" : "light";
-      
-      new (window.TradingView as any).widget({
-        container_id: "tv-chart",
-        symbol: `BINANCE:${symbol}`,
-        interval: "30",
-        timezone: "Asia/Kolkata",
-        theme: theme, // the
-        style: "1",
-        locale: "en",
-        enable_publishing: false,
-        allow_symbol_change: true,
-        autosize: true,
-      })
-      
+          document.documentElement.className === "dark" ? "dark" : "light"
+
+        window.TradingView.widget({
+          container_id: "tv-chart",
+          symbol: `BINANCE:${symbol}`,
+          interval: "30",
+          timezone: "Asia/Kolkata",
+          theme: theme,
+          style: "1",
+          locale: "en",
+          enable_publishing: false,
+          allow_symbol_change: true,
+          autosize: true,
+        })
       }
     }
 
-    // Load script once if not already loaded
     if (!window.TradingView) {
       const script = document.createElement("script")
       script.src = "https://s3.tradingview.com/tv.js"
@@ -49,8 +46,7 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
     }
   }, [symbol])
 
-  theme: document.documentElement.className === "dark" ? "dark" : "light"
-
-
-  return <div id="tv-chart" ref={containerRef} style={{ height: "500px", width: "100%" }} />
+  return (
+    <div id="tv-chart" ref={containerRef} style={{ height: "500px", width: "100%" }} />
+  )
 }
