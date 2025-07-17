@@ -1,5 +1,6 @@
 "use client"
 
+
 import Link from "next/link"
 import MobileTopNavbar from "@/components/MobileTopNavbar"
 import MobileBottomNavbar from "@/components/MobileBottomNavbar"
@@ -157,10 +158,12 @@ export default function Page() {
                 </div>
               )
             })}
+        
           </div>
         </div>
         <MobileBottomNavbar />
       </SidebarInset>
     </SidebarProvider>
   )
+  
 }
