@@ -18,18 +18,22 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
         containerRef.current.innerHTML = "" // clear previous chart
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        new (window.TradingView as any).widget({
-          container_id: "tv-chart",
-          symbol: `BINANCE:${symbol}`,
-          interval: "30",
-          timezone: "Asia/Kolkata",
-          theme: "dark",
-          style: "1",
-          locale: "en",
-          enable_publishing: false,
-          allow_symbol_change: true,
-          autosize: true,
-        })
+        const theme =
+        document.documentElement.className === "dark" ? "dark" : "light";
+      
+      new (window.TradingView as any).widget({
+        container_id: "tv-chart",
+        symbol: `BINANCE:${symbol}`,
+        interval: "30",
+        timezone: "Asia/Kolkata",
+        theme: theme, // the
+        style: "1",
+        locale: "en",
+        enable_publishing: false,
+        allow_symbol_change: true,
+        autosize: true,
+      })
+      
       }
     }
 
@@ -44,6 +48,9 @@ export default function TradingViewWidget({ symbol }: { symbol: string }) {
       loadWidget()
     }
   }, [symbol])
+
+  theme: document.documentElement.className === "dark" ? "dark" : "light"
+
 
   return <div id="tv-chart" ref={containerRef} style={{ height: "500px", width: "100%" }} />
 }

@@ -25,7 +25,7 @@ const items = [
   },
   {
     title: "Mutual funds",
-    url: "#",
+    url: "/mutual-fund",
     icon: Calendar,
   },
   {

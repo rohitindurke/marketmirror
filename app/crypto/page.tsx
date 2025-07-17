@@ -1,6 +1,8 @@
 "use client"
 
 import Link from "next/link"
+import MobileTopNavbar from "@/components/MobileTopNavbar"
+import MobileBottomNavbar from "@/components/MobileBottomNavbar"
 import { AppSidebar } from "@/components/app-sidebar"
 import {
   SidebarInset,
@@ -14,8 +16,6 @@ import {
   Tooltip,
   YAxis,
 } from "recharts"
-import MobileTopNavbar from "@/components/MobileTopNavbar"
-import MobileBottomNavbar from "@/components/MobileBottomNavbar"
 
 const coins = [
   "BTC", "ETH", "BNB", "SOL",
@@ -98,6 +98,7 @@ export default function Page() {
       <AppSidebar />
       <SidebarInset>
         <MobileTopNavbar />
+        
         <div className="pt-16 pb-20 px-4">
           <div className="flex flex-1 flex-col gap-4 p-4">
             {coins.map((coin, index) => {
